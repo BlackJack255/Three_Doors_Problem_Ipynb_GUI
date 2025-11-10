@@ -27,9 +27,9 @@ $\quad$ There should be our files
 
 * Run and enjoy the GUI
 ```python
-from Three_Door_GUI import Three_Door
+from Three_Door_GUI import Three_Doors
 
-three_door = Three_Door(init_num=3, max_num=10)
+three_door = Three_Doors(init_num=3, max_num=10)
 three_door.run_gui()
 ```
 
