@@ -1,4 +1,4 @@
-# Three_Door_Problem_Ipynb_GUI
+# Three_Doors_Problem_Ipynb_GUI
 Run three door problem interactively on Ipynb/jupyter notebook GUI
 
 Here we choose ipywidgets package
