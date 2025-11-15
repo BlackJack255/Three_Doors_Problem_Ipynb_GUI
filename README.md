@@ -9,41 +9,44 @@ Here we choose ipywidgets package
 ### Interactive GUI playing Three door problem on Colab
 
 
-## Clone repository
 
-* Open Colab
+## Replicate on empty Colab
 
-* Clone our repository
+* 1 - Clone repository
 
-```bash
-!git clone https://github.com/BlackJack255/Three_Doors_Problem_Ipynb_GUI.git
-```
+    $\quad$ Open Colab and clone our repository
 
-$\quad$ Then go to our repository folder
-```bash
-%cd Three_Doors_Problem_Ipynb_GUI/
-%ls
-```
-$\quad$ There should be our files
-<br>
-<br>
+    ```bash
+    !git clone https://github.com/BlackJack255/Three_Doors_Problem_Ipynb_GUI.git
+    ```
 
-## Installation
-Required packages should already be installed in Colab
+    $\quad$ Then go to our repository folder
+    ```bash
+    %cd Three_Doors_Problem_Ipynb_GUI/
+    %ls
+    ```
+    $\quad$ There should be our files
+    <br>
+    <br>
 
-If not installed, run following command
+* 2 - Installation
 
-```bash
-!pip install ipywidgets
-```
+    Required packages should already be installed in Colab
+
+    If not installed, run following command
+
+    ```bash
+    !pip install ipywidgets
+    ```
 
 
 
-## Run and enjoy the GUI
-```python
-from Three_Doors_GUI import Three_Doors
+* 3 - Run and enjoy the GUI
 
-three_door = Three_Doors(init_num=3, max_num=10)
-three_door.run_gui()
-```
+    ```python
+    from Three_Doors_GUI import Three_Doors
+
+    three_door = Three_Doors(init_num=3, max_num=10)
+    three_door.run_gui()
+    ```
 
