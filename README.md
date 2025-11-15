@@ -8,6 +8,9 @@ Here we choose ipywidgets package
 ## Introduction
 ### Interactive GUI playing Three door problem on Colab
 
+## Run example Colab
+
+Click [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/BlackJack255/Colab_MIT/blob/main/Math_related/Three_Doors_Colab.ipynb)
 
 
 ## Replicate on empty Colab
