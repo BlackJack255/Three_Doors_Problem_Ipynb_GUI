@@ -6,7 +6,7 @@ Here we choose ipywidgets package
 # User guide
 
 ## Introduction
-### Interactive GUI playing Three door problem on Colab
+Interactive GUI playing Three door problem on Colab
 
 ## Run example Colab
 
