@@ -80,19 +80,6 @@ class Three_Doors():
 
     def manage_goat(self, door_num, chosen_i):
         '''
-        collect goat doors to be open, may randomly
-
-        Parameters:
-        - door_num: total number of doors
-        - chosen_i: i-th door you picked
-
-        member be involved:
-        - self.door_box
-
-        return:
-            None
-
-
         steps:
 
         travel all doors
@@ -114,16 +101,7 @@ class Three_Doors():
 
             isolated hide door from remain goat_arr
                 swap hide door with last stored door
-                
-        open stored doors, change box description to "GOAT"
-
-        put chosen door to children keep
-        put hide door to children switch
-        
         '''
-
-
-        self.door_box.children[chosen_i].layout = widgets.Layout(border='2px solid orange')
 
         # need random choose door opened
         # local variable
@@ -163,6 +141,36 @@ class Three_Doors():
 
             open_num -= 1
 
+        return goat_arr, hide_idx, open_num
+
+
+
+    def manage_goat_gui(self, door_num, chosen_i):
+        '''
+        collect goat doors to be open, may randomly
+
+        Parameters:
+        - door_num: total number of doors
+        - chosen_i: i-th door you picked
+
+        member be involved:
+        - self.door_box
+
+        return:
+            None
+
+        open stored doors, change box description to "GOAT"
+
+        put chosen door to children keep
+        put hide door to children switch
+
+        '''
+
+
+        self.door_box.children[chosen_i].layout = widgets.Layout(border='2px solid orange')
+
+        goat_arr, hide_idx, open_num = self.manage_goat(door_num, chosen_i)
+
         # open stored doors, change box description to "GOAT"
         for i in range(open_num):
             # reveal this door, it's goat behind
@@ -184,7 +192,7 @@ class Three_Doors():
 
         self.final_choice.value = self.final_str + " " +str(hide_idx+1) + "?"
 
-        # end of manage_goat
+        # end of manage_goat_gui
 
     def door_open(self, b):
         # global variables
@@ -203,24 +211,27 @@ class Three_Doors():
             #else:
             #    print("only goat")
 
-            self.manage_goat(door_num, idx)
+            self.manage_goat_gui(door_num, idx)
             # now some door opened, status changed
             self.start_butt.value = 1
         #else:
             #print("extra information already revealed")
 
     def generate_door(self, door_num):
+        # re-generate car array
+        for i in range(self.max_num):
+            self.car_arr[i] = 0
+        car_idx = random.randint(0, door_num-1)
+        self.car_arr[car_idx] = 1
+
+    def generate_door_gui(self, door_num):
         # initial all status
         #
         # global variables:
         #     door_box
         #     start_butt
 
-        # re-generate car array
-        for i in range(self.max_num):
-            self.car_arr[i] = 0
-        car_idx = random.randint(0, door_num-1)
-        self.car_arr[car_idx] = 1
+        self.generate_door(door_num)
 
         #print("car arr: ", car_arr)
 
@@ -254,7 +265,7 @@ class Three_Doors():
         #     door_num_int
         #     game_proc
         door_num = self.door_num_int.value
-        self.generate_door(door_num)
+        self.generate_door_gui(door_num)
         self.game_proc.value = self.game_proc_str
 
     #self.start_butt.on_click(start_click)
